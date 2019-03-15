@@ -1,3 +1,11 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
 #include <iostream>
 using namespace std;
 
@@ -17,55 +25,55 @@ class Node
 	}
 };
 
-class BiST
+class binory
 {
 	public:
 	Node *root;
 
-	BiST() { root = NULL; }
+	binory() { root = NULL; }
 
 	void insert(int value)
 	{ insertHelper(root, value);}
 
-	void insertHelper(Node *curr, int value)
+	void insertHelper(Node *current, int value)
 	{
 		if (root == NULL)
 		{
 			root = new Node(value);
 		}
 		// Else compare the curr data with value
-		else if (value < curr->data)
+		else if (value < current->data)
 		{
 			// else move left and call insertH
-			if (curr->left == NULL)
-				curr->left = new Node(value);
+			if (current->left == NULL)
+				current->left = new Node(value);
 			else
-				insertHelper(curr->left, value);
+				insertHelper(current->left, value);
 		}
 		else
 		{
 			// Else move right and call insertH
-			if (curr->right == NULL)
-				curr->right = new Node(value);
+			if (current->right == NULL)
+				current->right = new Node(value);
 			else
-				insertHelper(curr->right, value);
+				insertHelper(current->right, value);
 		}
   	}
 
   	void display()
 	{displayHelper(root);}
 
-  	void displayHelper(Node *curr)
+  	void displayHelper(Node *current)
 	{
 		// Base condition
-		if (curr == NULL)
+		if (current == NULL)
 			return;
 		// Display left.
-		displayHelper(curr->left);
+		displayHelper(current->left);
 		// Display current
-		cout << curr->data << ",";
+		cout << current->data << ",";
 		// Display right
-		displayHelper(curr->right);
+		displayHelper(current->right);
 	}
 
 	void displayFancy()
@@ -103,7 +111,7 @@ class BiST
 
 int main()
 {
-	BiST lol;
+	binory lol;
 	lol.insert(4);
 	lol.insert(8);
 	lol.insert(2);
